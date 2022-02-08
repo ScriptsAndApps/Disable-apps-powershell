@@ -1,1 +1,9 @@
-Get-Service |  select -property name,displayname | where-object {$_.name -like "*update*" -or $_.DisplayName -like "*telem*" -or $_.DisplayName -like "*update*"  -or $_.DisplayName -like "*-V*" -or $_.DisplayName -like "*remote d*" -or $_.DisplayName -like "*remote a*" -or $_.DisplayName -like "*secondar*"  -or $_.DisplayName -like "*upnp*" -or $_.DisplayName -like "*spoo*"  -or $_.DisplayName -like "*xbo*"   -or $_.DisplayName -like "*touch*"   -or $_.DisplayName -like "*smart*"   -or $_.DisplayName -like "*peer*"  -or $_.DisplayName -like "*LOCK*"} |  Set-Service -StartupType disabled
+Get-Service |  select -property name,displayname | where-object {$_.name -like "*update*" -or $_.DisplayName -like "*telem*" `
+-or $_.DisplayName -like "*update*"  -or $_.DisplayName -like "*-V*" -or $_.DisplayName -like "*remote d*" `
+-or $_.DisplayName -like "*remote a*" -or $_.DisplayName -like "*secondar*"  -or $_.DisplayName -like "*upnp*" `
+-or $_.DisplayName -like "*spoo*"  -or $_.DisplayName -like "*xbo*"   -or $_.DisplayName -like "*touch*"   `
+-or $_.DisplayName -like "*smart*"   -or $_.DisplayName -like "*peer*"  -or $_.DisplayName -like "*LOCK*"} |`
+Set-Service -StartupType disabled
+write-host "Done setting service to disable"
+
+#copy and paste using Control+C Control+V
